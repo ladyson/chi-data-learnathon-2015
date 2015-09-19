@@ -430,7 +430,7 @@ $(function () {
             type: 'column'
         },
         title: {
-            text: 'Surface Types'
+            text: 'Graffiti Requests by Surface Types'
         },
         xAxis: {
             categories: surface_types,
@@ -438,14 +438,14 @@ $(function () {
         yAxis: {
             min: 0,
             title: {
-                text: '# of requests',
+                text: 'Number of requests',
             },
         },
         credits: {
             enabled: false
         },
         series: [{
-            name: 'bar',
+            name: 'Surface Types',
             data: count_by_type,
         }]
     });
