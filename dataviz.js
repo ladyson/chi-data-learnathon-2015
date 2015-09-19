@@ -393,6 +393,12 @@ $(function () {
         creation_dates.push(k)
         count_by_date.push(graffiti_data['requests_by_creation_date'][k])
         }
+    var surface_types = []
+    var count_by_type = []
+    for(var k in graffiti_data['requests_by_surface_type']){
+        surface_types.push(k)
+        count_by_type.push(graffiti_data['requests_by_surface_type'][k])
+        }
 
     $('#chart-1').highcharts({
         chart: {
@@ -418,21 +424,21 @@ $(function () {
             data: count_by_date,
         }]
     });
-
+  
     $('#chart-2').highcharts({
         chart: {
             type: 'column'
         },
         title: {
-            text: 'Another Chart'
+            text: 'Surface Types'
         },
         xAxis: {
-            categories: graffiti_data['requests_by_creation_date'],
+            categories: surface_types,
         },
         yAxis: {
             min: 0,
             title: {
-                text: 'bar',
+                text: '# of requests',
             },
         },
         credits: {
@@ -440,7 +446,7 @@ $(function () {
         },
         series: [{
             name: 'bar',
-            data: [1, 2, 3, 2, 1]
+            data: count_by_type,
         }]
     });
 
